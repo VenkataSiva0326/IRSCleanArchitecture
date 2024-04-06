@@ -12,13 +12,19 @@ namespace IRSCleanArchitecture.Application.Features.Users.Queries.GetUserById
 {
     public class GetUserByIdQueryHandler : IRequestHandler<GetUserByIdQueryRequest, UserDetailsVm>
     {
-        private readonly IUnitOfWork _unitOfWork;
+        //private readonly IUnitOfWork _unitOfWork;
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
 
-        public GetUserByIdQueryHandler(IUnitOfWork unitOfWork, IUserRepository userRepository, IMapper mapper)
+        //public GetUserByIdQueryHandler(IUnitOfWork unitOfWork, IUserRepository userRepository, IMapper mapper)
+        //{
+        //    _unitOfWork = unitOfWork;
+        //    _userRepository = userRepository;
+        //    _mapper = mapper;
+        //}
+
+        public GetUserByIdQueryHandler(IUserRepository userRepository, IMapper mapper)
         {
-            _unitOfWork = unitOfWork;
             _userRepository = userRepository;
             _mapper = mapper;
         }

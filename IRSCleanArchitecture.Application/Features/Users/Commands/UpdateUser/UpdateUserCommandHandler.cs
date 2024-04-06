@@ -11,13 +11,19 @@ namespace IRSCleanArchitecture.Application.Features.Users.Commands.UpdateUser
 {
     public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand, UpdateUserCommandResponse>
     {
-        private readonly IUnitOfWork _unitOfWork;
+        //private readonly IUnitOfWork _unitOfWork;
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
 
-        public UpdateUserCommandHandler(IUnitOfWork unitOfWork, IUserRepository userRepository, IMapper mapper)
+        //public UpdateUserCommandHandler(IUnitOfWork unitOfWork, IUserRepository userRepository, IMapper mapper)
+        //{
+        //    _unitOfWork = unitOfWork;
+        //    _userRepository = userRepository;
+        //    _mapper = mapper;
+        //}
+
+        public UpdateUserCommandHandler(IUserRepository userRepository, IMapper mapper)
         {
-            _unitOfWork = unitOfWork;
             _userRepository = userRepository;
             _mapper = mapper;
         }

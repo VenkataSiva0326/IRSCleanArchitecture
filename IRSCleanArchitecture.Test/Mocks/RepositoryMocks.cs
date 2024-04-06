@@ -42,12 +42,24 @@ namespace IRSCleanArchitecture.Test.Mocks
                 }
             };
 
-            var mockCategoryRepository = new Mock<IUserRepository>();
-            mockCategoryRepository.Setup(repo => repo.GetAllUsers(CancellationToken.None)).ReturnsAsync(usersList);
+            var mockUserRepository = new Mock<IUserRepository>();
+            mockUserRepository.Setup(repo => repo.GetAllUsers(CancellationToken.None)).ReturnsAsync(usersList);
+            mockUserRepository.Setup(repo => repo.GetUserById(It.IsAny<int>(),CancellationToken.None)).ReturnsAsync(new User());
 
-            mockCategoryRepository.Setup(repo => repo.Create(It.IsAny<User>()));
+            mockUserRepository.Setup(repo => repo.CreateUser(It.IsAny<User>())).ReturnsAsync(
+                (User user) =>
+                {
+                    usersList.Add(user);
+                    return user;
+                });
+            mockUserRepository.Setup(repo => repo.DeleteUser(It.IsAny<int>())).ReturnsAsync(
+                (User user) =>
+                {
+                    usersList.Remove(user);
+                    return user;
+                });
 
-            return mockCategoryRepository;
+            return mockUserRepository;
         }
     }
 }

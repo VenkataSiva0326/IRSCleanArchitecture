@@ -11,13 +11,18 @@ namespace IRSCleanArchitecture.Application.Features.Users.Commands.DeleteUser
 {
     public class DeleteUserCommandHandler : IRequestHandler<DeleteUserCommand, DeleteUserCommandResponse>
     {
-        private readonly IUnitOfWork _unitOfWork;
+        //private readonly IUnitOfWork _unitOfWork;
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
 
-        public DeleteUserCommandHandler(IUnitOfWork unitOfWork, IUserRepository userRepository, IMapper mapper)
+        //public DeleteUserCommandHandler(IUnitOfWork unitOfWork, IUserRepository userRepository, IMapper mapper)
+        //{
+        //    _unitOfWork = unitOfWork;
+        //    _userRepository = userRepository;
+        //    _mapper = mapper;
+        //}
+        public DeleteUserCommandHandler(IUserRepository userRepository, IMapper mapper)
         {
-            _unitOfWork = unitOfWork;
             _userRepository = userRepository;
             _mapper = mapper;
         }

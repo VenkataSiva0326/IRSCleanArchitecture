@@ -10,27 +10,27 @@ namespace IRSCleanArchitecture.Persistence.Repositories
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
     {
-        public void Create(T entity)
+        public Task<T> AddAsync(T entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(T entity)
+        public Task DeleteAsync(T entity)
         {
             throw new NotImplementedException();
         }
 
-        public Task<T> Get(Guid id)
+        public Task<T> GetByIdAsync(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<T>> GetAll()
+        public Task<IReadOnlyList<T>> ListAllAsync()
         {
             throw new NotImplementedException();
         }
 
-        public void Update(T entity)
+        public Task UpdateAsync(T entity)
         {
             throw new NotImplementedException();
         }

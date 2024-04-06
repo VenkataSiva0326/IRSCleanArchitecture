@@ -22,33 +22,7 @@ namespace IRSCleanArchitecture.Persistence.Repositories
             _context = context;
         }
 
-        public void Create(User entity)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        public void Delete(User entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<User> Get(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<List<User>> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        
-
-        public void Update(User entity)
-        {
-            throw new NotImplementedException();
-        }
+       
         public Task<User> GetByEmail(string email, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
@@ -146,5 +120,29 @@ namespace IRSCleanArchitecture.Persistence.Repositories
             }
         }
 
+        public Task<User> GetByIdAsync(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IReadOnlyList<User>> ListAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<User> AddAsync(User entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task UpdateAsync(User entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task DeleteAsync(User entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

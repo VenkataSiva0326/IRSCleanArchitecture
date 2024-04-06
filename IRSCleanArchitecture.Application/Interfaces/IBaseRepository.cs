@@ -9,10 +9,10 @@ namespace IRSCleanArchitecture.Application.Interfaces
 {
     public interface IBaseRepository<T> where T : BaseEntity
     {
-        void Create(T entity);
-        void Update(T entity);
-        void Delete(T entity);
-        Task<T> Get(Guid id);
-        Task<List<T>> GetAll();
+        Task<T> GetByIdAsync(Guid id);
+        Task<IReadOnlyList<T>> ListAllAsync();
+        Task<T> AddAsync(T entity);
+        Task UpdateAsync(T entity);
+        Task DeleteAsync(T entity);
     }
 }

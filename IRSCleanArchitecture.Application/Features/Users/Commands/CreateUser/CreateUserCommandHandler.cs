@@ -7,13 +7,18 @@ namespace IRSCleanArchitecture.Application.Features.Users.Commands.CreateUser
 {
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, CreateUserCommandResponse>
     {
-        private readonly IUnitOfWork _unitOfWork;
+        //private readonly IUnitOfWork _unitOfWork;
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
 
-        public CreateUserCommandHandler(IUnitOfWork unitOfWork, IUserRepository userRepository, IMapper mapper)
+        //public CreateUserCommandHandler(IUnitOfWork unitOfWork, IUserRepository userRepository, IMapper mapper)
+        //{
+        //    _unitOfWork = unitOfWork;
+        //    _userRepository = userRepository;
+        //    _mapper = mapper;
+        //}
+        public CreateUserCommandHandler(IUserRepository userRepository, IMapper mapper)
         {
-            _unitOfWork = unitOfWork;
             _userRepository = userRepository;
             _mapper = mapper;
         }

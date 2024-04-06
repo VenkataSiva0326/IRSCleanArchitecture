@@ -20,7 +20,7 @@ namespace IRSCleanArchitecture.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<GetAllUserQueryResponse>>> GetAll(CancellationToken cancellationToken)
+        public async Task<ActionResult<List<UserListVm>>> GetAll(CancellationToken cancellationToken)
         {
             var response = await _mediator.Send(new GetAllUserQuery(), cancellationToken);
             return Ok(response);
@@ -32,7 +32,7 @@ namespace IRSCleanArchitecture.API.Controllers
         public async Task<ActionResult<CreateUserCommandResponse>> Create(CreateUserCommand request, CancellationToken cancellationToken)
         {
             var response = await _mediator.Send(request, cancellationToken);
-            return Created();
+            return Ok(response);
         }
 
         [HttpPut("{id}")]
