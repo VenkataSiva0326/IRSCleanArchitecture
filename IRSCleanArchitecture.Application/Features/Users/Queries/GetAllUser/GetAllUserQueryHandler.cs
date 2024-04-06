@@ -9,7 +9,7 @@ using MediatR;
 
 namespace IRSCleanArchitecture.Application.Features.Users.Queries.GetAllUser
 {
-    public sealed class GetAllUserQueryHandler : IRequestHandler<GetAllUserQuery, List<GetAllUserQueryResponse>>
+    public sealed class GetAllUserQueryHandler : IRequestHandler<GetAllUserQuery, List<UserListVm>>
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
@@ -20,10 +20,10 @@ namespace IRSCleanArchitecture.Application.Features.Users.Queries.GetAllUser
             _mapper = mapper;
         }
 
-        public async Task<List<GetAllUserQueryResponse>> Handle(GetAllUserQuery request, CancellationToken cancellationToken)
+        public async Task<List<UserListVm>> Handle(GetAllUserQuery request, CancellationToken cancellationToken)
         {
             var users = await _userRepository.GetAllUsers(cancellationToken);
-            return _mapper.Map<List<GetAllUserQueryResponse>>(users);
+            return _mapper.Map<List<UserListVm>>(users);
         }
     }
 }

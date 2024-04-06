@@ -20,12 +20,12 @@ namespace IRSCleanArchitecture.Persistence.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<T> Get(Guid id, CancellationToken cancellationToken)
+        public Task<T> Get(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<T>> GetAll(CancellationToken cancellationToken)
+        public Task<List<T>> GetAll()
         {
             throw new NotImplementedException();
         }
