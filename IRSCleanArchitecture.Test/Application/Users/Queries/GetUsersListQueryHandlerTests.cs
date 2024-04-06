@@ -26,7 +26,7 @@ namespace IRSCleanArchitecture.Test.Application.Users.Queries
         }
 
         [Fact]
-        public async Task GetCategoriesListTest()
+        public async Task GetAllUsersListTest()
         {
             var handler = new GetAllUserQueryHandler(_mockUserRepository.Object, _mapper);
 
