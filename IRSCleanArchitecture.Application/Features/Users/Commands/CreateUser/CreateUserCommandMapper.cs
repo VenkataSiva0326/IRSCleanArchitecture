@@ -8,12 +8,12 @@ using IRSCleanArchitecture.Domain.Entities;
 
 namespace IRSCleanArchitecture.Application.Features.Users.Commands.CreateUser
 {
-    public sealed class CreateUserMapper : Profile
+    public sealed class CreateUserCommandMapper : Profile
     {
-        public CreateUserMapper()
+        public CreateUserCommandMapper()
         {
-            CreateMap<CreateUserRequest, User>();
-            CreateMap<User, CreateUserResponse>();
+            CreateMap<CreateUserCommand, User>();
+            CreateMap<User, CreateUserCommandResponse>();
         }
     }
 }

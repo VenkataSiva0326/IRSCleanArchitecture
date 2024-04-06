@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
 
-namespace IRSCleanArchitecture.Application.Features.Users.Commands.CreateUser
+namespace IRSCleanArchitecture.Application.Features.Users.Commands.UpdateUser
 {
-    public sealed class CreateUserValidator : AbstractValidator<CreateUserRequest>
+    public class UpdateUserCommandValidator : AbstractValidator<UpdateUserCommand>
     {
-        public CreateUserValidator()
+        public UpdateUserCommandValidator()
         {
             RuleFor(x => x.Email).NotEmpty().MaximumLength(50).EmailAddress();
             RuleFor(x => x.Name).NotEmpty().MinimumLength(3).MaximumLength(50);

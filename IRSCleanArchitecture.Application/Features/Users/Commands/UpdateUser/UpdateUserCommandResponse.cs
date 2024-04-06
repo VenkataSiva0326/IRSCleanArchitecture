@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MediatR;
 
 namespace IRSCleanArchitecture.Application.Features.Users.Commands.UpdateUser
 {
-    public sealed record UpdateUserRequest(int Id, string Email, string Name) : IRequest<UpdateUserResponse>;
+    public class UpdateUserCommandResponse
+    {
+        public int Id { get; set; }
+        public string? Email { get; set; }
+        public string? Name { get; set; }
+    }
 }

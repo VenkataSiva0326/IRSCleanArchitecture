@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IRSCleanArchitecture.Application.Responses;
 
-namespace IRSCleanArchitecture.Application.Features.Users.Commands.DeleteUser
+namespace IRSCleanArchitecture.Application.Features.Users.Commands.CreateUser
 {
-    public class DeleteUserResponse
+    public class CreateUserCommandResponse : BaseResponse
     {
         public int Id { get; set; }
         public string? Email { get; set; }

@@ -8,12 +8,12 @@ using IRSCleanArchitecture.Domain.Entities;
 
 namespace IRSCleanArchitecture.Application.Features.Users.Commands.DeleteUser
 {
-    public sealed class DeleteUserMapper : Profile
+    public sealed class DeleteUserCommandMapper : Profile
     {
-        public DeleteUserMapper()
+        public DeleteUserCommandMapper()
         {
-            CreateMap<DeleteUserRequest, User>();
-            CreateMap<User, DeleteUserResponse>();
+            CreateMap<DeleteUserCommand, User>();
+            CreateMap<User, DeleteUserCommandResponse>();
         }
     }
 }

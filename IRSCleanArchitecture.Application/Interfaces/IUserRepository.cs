@@ -13,8 +13,8 @@ namespace IRSCleanArchitecture.Application.Interfaces
 
         Task<User> CreateUser(User entity);
         Task<User> UpdateUser(User entity);
-        Task<User> DeleteUser(User entity);
-        Task<User> GetUserById(int id, CancellationToken cancellationToken);
+        Task<User> DeleteUser(int? id);
+        Task<User> GetUserById(int? id, CancellationToken cancellationToken);
         Task<List<User>> GetAllUsers(CancellationToken cancellationToken);
     }
 }

@@ -8,11 +8,11 @@ using IRSCleanArchitecture.Domain.Entities;
 
 namespace IRSCleanArchitecture.Application.Features.Users.Queries.GetAllUser
 {
-    public sealed class GetAllUserMapper : Profile
+    public sealed class GetAllUserQueryMapper : Profile
     {
-        public GetAllUserMapper()
+        public GetAllUserQueryMapper()
         {
-            CreateMap<User, GetAllUserResponse>();
+            CreateMap<User, GetAllUserQueryResponse>();
         }
     }
 }

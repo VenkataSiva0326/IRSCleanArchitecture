@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IRSCleanArchitecture.Application.Features.Users.Commands.CreateUser
+namespace IRSCleanArchitecture.Application.Features.Users.Commands.DeleteUser
 {
-    public sealed record CreateUserResponse
+    public class DeleteUserCommandResponse
     {
         public int Id { get; set; }
         public string? Email { get; set; }

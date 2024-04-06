@@ -16,8 +16,4 @@
     <ProjectReference Include="..\IRSCleanArchitecture.Domain\IRSCleanArchitecture.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Users\Queries\GetUserById\" />
-  </ItemGroup>
-
 </Project>

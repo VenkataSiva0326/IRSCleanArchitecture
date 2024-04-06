@@ -7,9 +7,9 @@ using FluentValidation;
 
 namespace IRSCleanArchitecture.Application.Features.Users.Commands.DeleteUser
 {
-    public class DeleteUserValidator : AbstractValidator<DeleteUserRequest>
+    public class DeleteUserCommandValidator : AbstractValidator<DeleteUserCommand>
     {
-        public DeleteUserValidator()
+        public DeleteUserCommandValidator()
         {
             RuleFor(x => x.Id).NotEmpty();
         }

@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FluentValidation;
 
 namespace IRSCleanArchitecture.Application.Features.Users.Queries.GetAllUser
 {
-    public class GetAllUserValidator : AbstractValidator<GetAllUserResponse>
+    public sealed class GetAllUserQueryResponse
     {
-        public GetAllUserValidator()
-        {
-            // sem validação
-        }
+        public int Id { get; set; }
+        public string? Email { get; set; }
+        public string? Name { get; set; }
     }
 }

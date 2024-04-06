@@ -7,5 +7,11 @@ using MediatR;
 
 namespace IRSCleanArchitecture.Application.Features.Users.Commands.CreateUser
 {
-    public sealed record CreateUserRequest(string Email, string Name) : IRequest<CreateUserResponse>;
+    public class CreateUserCommand : IRequest<CreateUserCommandResponse>
+    {
+        public string Email { get; set; } = string.Empty;
+
+        public string Name { get; set; } = string.Empty;
+
+    }
 }
