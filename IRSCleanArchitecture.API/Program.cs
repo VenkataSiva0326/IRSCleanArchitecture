@@ -28,6 +28,8 @@ builder.Services.AddProblemDetails(options =>
 });
 var app = builder.Build();
 
+app.UseContentTypeValidation();
+
 app.UseStatusCodePages();
 app.UseExceptionHandler();
 app.UseSwagger();

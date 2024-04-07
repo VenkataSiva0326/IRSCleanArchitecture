@@ -1,4 +1,5 @@
-﻿using IRSCleanArchitecture.Application.Features.Users.Commands.CreateUser;
+﻿using IRSCleanArchitecture.API.Extensions;
+using IRSCleanArchitecture.Application.Features.Users.Commands.CreateUser;
 using IRSCleanArchitecture.Application.Features.Users.Commands.DeleteUser;
 using IRSCleanArchitecture.Application.Features.Users.Commands.UpdateUser;
 using IRSCleanArchitecture.Application.Features.Users.Queries.GetAllUser;
@@ -29,10 +30,19 @@ namespace IRSCleanArchitecture.API.Controllers
         [HttpPost]
         [ProducesResponseType<CreateUserCommandResponse>(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status415UnsupportedMediaType)]
+        [ContentTypeValidation] // Apply the attribute to the action method
         public async Task<ActionResult<CreateUserCommandResponse>> Create(CreateUserCommand request, CancellationToken cancellationToken)
         {
             var response = await _mediator.Send(request, cancellationToken);
-            return Ok(response);
+            // Generate the URL for the newly created resource
+            var baseUrl = $"{this.Request.Scheme}://{this.Request.Host}{this.Request.PathBase}";
+            var locationUrl = new Uri(baseUrl + "/api/Users/" + response.Id.ToString());
+
+            // Return the response with 201 Created status code and Location header
+            return Created(locationUrl, response.Id);
+
+            //return Ok(response);
         }
 
         [HttpPut("{id}")]

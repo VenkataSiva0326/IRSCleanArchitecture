@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRSCleanArchitecture.Domain", "IRSCleanArchitecture.Domain\IRSCleanArchitecture.Domain.csproj", "{D70E7418-43C4-4D35-AEC2-9ED276B8E752}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IRSCleanArchitecture.Domain", "IRSCleanArchitecture.Domain\IRSCleanArchitecture.Domain.csproj", "{D70E7418-43C4-4D35-AEC2-9ED276B8E752}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRSCleanArchitecture.Application", "IRSCleanArchitecture.Application\IRSCleanArchitecture.Application.csproj", "{851DCCE7-D587-4419-B721-D968D5536DDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IRSCleanArchitecture.Application", "IRSCleanArchitecture.Application\IRSCleanArchitecture.Application.csproj", "{851DCCE7-D587-4419-B721-D968D5536DDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRSCleanArchitecture.Persistence", "IRSCleanArchitecture.Persistence\IRSCleanArchitecture.Persistence.csproj", "{47090AB9-9561-4021-8831-EBD3C607AAA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IRSCleanArchitecture.Persistence", "IRSCleanArchitecture.Persistence\IRSCleanArchitecture.Persistence.csproj", "{47090AB9-9561-4021-8831-EBD3C607AAA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRSCleanArchitecture.API", "IRSCleanArchitecture.API\IRSCleanArchitecture.API.csproj", "{5EAF48E8-0B09-43F8-89BB-C14BCCEBA8B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IRSCleanArchitecture.API", "IRSCleanArchitecture.API\IRSCleanArchitecture.API.csproj", "{5EAF48E8-0B09-43F8-89BB-C14BCCEBA8B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRSCleanArchitecture.Test", "IRSCleanArchitecture.Test\IRSCleanArchitecture.Test.csproj", "{DE3A6A24-2B13-4764-8426-1B81D2BF79EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IRSCleanArchitecture.Tests", "IRSCleanArchitecture.Test\IRSCleanArchitecture.Tests.csproj", "{DE3A6A24-2B13-4764-8426-1B81D2BF79EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
