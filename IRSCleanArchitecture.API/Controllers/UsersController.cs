@@ -46,13 +46,19 @@ namespace IRSCleanArchitecture.API.Controllers
         }
 
         [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesDefaultResponseType]
         public async Task<ActionResult<UpdateUserCommandResponse>> Update(int? id, UpdateUserCommand request, CancellationToken cancellationToken)
         {
             if (id != request.Id) return BadRequest("Parâmetro id está incorreto");
 
-            var response = await _mediator.Send(request, cancellationToken);
+            await _mediator.Send(request, cancellationToken);
 
-            return Ok(response);
+            return NoContent();
+            //var response = await _mediator.Send(request, cancellationToken);
+            
+            //return Ok(response);
         }
 
         [HttpDelete("{id}")]
@@ -71,6 +77,7 @@ namespace IRSCleanArchitecture.API.Controllers
         [ProducesResponseType<GetUserByIdQueryResponse>(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status415UnsupportedMediaType)]
+        [ProducesDefaultResponseType]
         public async Task<ActionResult<GetUserByIdQueryResponse>> GetByid(int? id, CancellationToken cancellationToken)
         {
             if (id == null) return NotFound("Id is Not found");

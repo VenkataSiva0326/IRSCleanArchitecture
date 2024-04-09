@@ -1,6 +1,8 @@
 using IRSCleanArchitecture.API.Extensions;
 using IRSCleanArchitecture.Application.Services;
 using IRSCleanArchitecture.Persistence;
+using IRSCleanArchitecture.API.Middleware;
+
 
 
 
@@ -16,6 +18,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
 builder.Services.AddProblemDetails(options =>
 {
     options.CustomizeProblemDetails = ctx =>
@@ -28,10 +31,12 @@ builder.Services.AddProblemDetails(options =>
 });
 var app = builder.Build();
 
-app.UseContentTypeValidation();
+app.UseContentTypeValidation(); // for status code 415
+
+app.UseCustomExceptionHandler(); // for validating custom exceptions
+//app.UseExceptionHandler(); // when we are using custom exception handler middleware don't use this
 
 app.UseStatusCodePages();
-app.UseExceptionHandler();
 app.UseSwagger();
 app.UseSwaggerUI();
 app.MapControllers();
