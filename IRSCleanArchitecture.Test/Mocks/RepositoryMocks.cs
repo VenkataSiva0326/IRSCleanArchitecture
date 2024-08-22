@@ -14,6 +14,7 @@ namespace IRSCleanArchitecture.Test.Mocks
         public static Mock<IUserRepository> GetUsersRepository()
         {
 
+
             var usersList = new List<User>
             {
                 new User
